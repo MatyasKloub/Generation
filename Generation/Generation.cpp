@@ -65,15 +65,14 @@ void generateNewTiles(std::vector<std::vector<int>>& tilemap, int playerX, int p
     if (playerX + WIDTH > tilemap.size() * TILE_SIZE - BORDER_DISTANCE) {
         int newTilesStartX = tilemap.size() * TILE_SIZE;
         int newTilesStartY = playerY - HEIGHT / 2;
+        std::cout << "New tiles start at: (" << newTilesStartX << ", " << newTilesStartY << ")" << std::endl;
         generateTilemap(tilemap, newTilesStartX, newTilesStartY, HEIGHT);
     }
 
-
-    // left
     if (playerX < BORDER_DISTANCE) {
         int newTilesStartX = 0;
         int newTilesStartY = playerY - HEIGHT / 2;
-        std::cout << "New tiles start: (" << newTilesStartX << ", " << newTilesStartY << ")" << std::endl;
+        std::cout << "New tiles start at: (" << newTilesStartX << ", " << newTilesStartY << ")" << std::endl;
         generateTilemap(tilemap, newTilesStartX, newTilesStartY, HEIGHT);
     }
 }
